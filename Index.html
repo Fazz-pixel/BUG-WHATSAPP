@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>iKenon Pro #FanzzV.X</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .ios-card {
+            width: 90%;
+            max-width: 360px;
+            background: rgba(28, 28, 30, 0.9);
+            backdrop-filter: blur(25px) saturate(200%);
+            -webkit-backdrop-filter: blur(25px) saturate(200%);
+            border-radius: 35px;
+            padding: 40px 25px;
+            text-align: center;
+            border: 0.5px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+        }
+
+        .ios-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #ff3b30 0%, #ff2d55 100%);
+            border-radius: 18px;
+            margin: 0 auto 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 10px 25px rgba(255, 59, 48, 0.4);
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0 0 10px;
+            letter-spacing: -0.8px;
+        }
+
+        p {
+            font-size: 14px;
+            color: #a1a1a6;
+            margin-bottom: 35px;
+            line-height: 1.4;
+        }
+
+        .input-group {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+
+        input {
+            width: 100%;
+            background: transparent;
+            border: none;
+            color: #ffffff;
+            padding: 18px;
+            font-size: 18px;
+            text-align: center;
+            outline: none;
+            font-weight: 500;
+        }
+
+        .ios-btn {
+            width: 100%;
+            background: #ffffff;
+            color: #000000;
+            border: none;
+            border-radius: 16px;
+            padding: 18px;
+            font-size: 17px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .ios-btn:active {
+            transform: scale(0.95);
+            background: #d1d1d6;
+        }
+
+        .status-footer {
+            font-size: 11px;
+            color: #48484a;
+            margin-top: 30px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <div class="ios-card">
+        <div class="ios-icon">
+            <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+        </div>
+        <h1>Permanent Ban</h1>
+        <p>iOS System Overdrive v.X<br>Reporting Critical Violations</p>
+        
+        <div class="input-group">
+            <input type="tel" id="targetNum" placeholder="+62 8xx-xxxx-xxxx" autocomplete="off">
+        </div>
+        
+        <button class="ios-btn" onclick="executePermanentKenon()">EXECUTE BAN</button>
+        
+        <div class="status-footer">SECURE HANDSHAKE: ACTIVE</div>
+    </div>
+
+    <script>
+        function executePermanentKenon() {
+            const num = document.getElementById('targetNum').value;
+            if(!num) return;
+
+            const recipient = "support@whatsapp.com";
+            const subject = "SEVERE VIOLATION: ACCOUNT TERMINATION REQUEST (" + num + ")";
+            
+            // "Text Sakti" - Menggunakan bahasa hukum & keamanan digital untuk memicu ban instan
+            const body = `To the WhatsApp Support & Safety Team,\n\nSubject: Urgent Request for Account Termination for Public Safety.\n\nI am formally reporting a severe and repeated violation of WhatsApp's Terms of Service (Section 4 & 5) by the user: ${num}.\n\nNature of Violation: Distribution of child-endangerment material and non-consensual sharing of private information (doxxing/CSAM). This account is being used to facilitate illegal activities that bypass standard automated filters.\n\nAs a concerned user and for the protection of the community, I demand the IMMEDIATE AND PERMANENT DEACTIVATION of account ${num}. Our internal logs (Reference ID: iOS-992-SEC) have flagged this number as a high-risk entity.\n\nFailure to act promptly could result in further legal repercussions for the platform's negligence.\n\nRegards,\nSecurity Response Division`;
+            
+            const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${recipient}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            const mailtoUrl = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+            window.location.href = mailtoUrl;
+            setTimeout(() => {
+                window.open(gmailUrl, '_blank');
+            }, 800);
+        }
+    </script>
+</body>
+</html>
